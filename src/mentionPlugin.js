@@ -118,6 +118,7 @@ export function getMentionsPlugin(opts) {
     mentionTrigger: "@",
     hashtagTrigger: "#",
     allowSpace: true,
+    container: null,
     getSuggestions: (type, text, cb) => {
       cb([]);
     },
@@ -179,7 +180,12 @@ export function getMentionsPlugin(opts) {
     var offset = textDOM.getBoundingClientRect();
 
     // TODO: think about outsourcing this positioning logic as options
-    document.body.appendChild(el);
+    if (opts.container) {     
+      container.appendChild(el);
+    }
+    else {
+      document.body.appendChild(el);
+    }
     el.classList.add('suggestion-item-container')
     el.style.position = "fixed";
     el.style.left = offset.left + "px";
