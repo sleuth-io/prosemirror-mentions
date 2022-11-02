@@ -201,13 +201,13 @@ export function getMentionsPlugin(opts) {
   };
 
   var removeClassAtIndex = function(index, className) {
-    var itemList = el.querySelector(".suggestion-item-list").childNodes;
+    var itemList = el.querySelectorAll(".suggestion-item-list .suggestion-item");
     var prevItem = itemList[index];
     prevItem.classList.remove(className);
   };
 
   var addClassAtIndex = function(index, className) {
-    var itemList = el.querySelector(".suggestion-item-list").childNodes;
+    var itemList = el.querySelectorAll(".suggestion-item-list .suggestion-item");
     var prevItem = itemList[index];
     prevItem.classList.add(className);
   };
