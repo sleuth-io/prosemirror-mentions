@@ -181,7 +181,7 @@ export function getMentionsPlugin(opts) {
 
     // TODO: think about outsourcing this positioning logic as options
     if (opts.container) {     
-      container.appendChild(el);
+      opts.container.appendChild(el);
     }
     else {
       document.body.appendChild(el);
