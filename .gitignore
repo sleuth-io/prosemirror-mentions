@@ -1,5 +1,5 @@
 # builds
-/dist
+#/dist
 
 # editors
 /.idea
