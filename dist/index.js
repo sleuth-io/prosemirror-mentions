@@ -238,6 +238,7 @@ function getMentionsPlugin(opts) {
 
   var select = function(view, state, opts) {
     var item = state.suggestions[state.index];
+    if (!item) return;
     var attrs;
     if (state.type === "mention") {
       attrs = {
