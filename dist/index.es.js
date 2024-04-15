@@ -200,7 +200,7 @@ function getMentionsPlugin(opts) {
       ".suggestion-item-list .suggestion-item"
     );
     var prevItem = itemList[index];
-    prevItem.classList.remove(className);
+    if (prevItem) prevItem.classList.remove(className);
   };
 
   var addClassAtIndex = function(index, className) {
@@ -208,7 +208,7 @@ function getMentionsPlugin(opts) {
       ".suggestion-item-list .suggestion-item"
     );
     var prevItem = itemList[index];
-    prevItem.classList.add(className);
+    if (prevItem) prevItem.classList.add(className);
   };
 
   var setIndex = function(index, state, opts) {

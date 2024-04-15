@@ -180,13 +180,12 @@ export function getMentionsPlugin(opts) {
     var offset = textDOM.getBoundingClientRect();
 
     // TODO: think about outsourcing this positioning logic as options
-    if (opts.container) {     
+    if (opts.container) {
       opts.container.appendChild(el);
-    }
-    else {
+    } else {
       document.body.appendChild(el);
     }
-    el.classList.add('suggestion-item-container')
+    el.classList.add("suggestion-item-container");
     el.style.position = "fixed";
     el.style.left = offset.left + "px";
 
@@ -201,15 +200,19 @@ export function getMentionsPlugin(opts) {
   };
 
   var removeClassAtIndex = function(index, className) {
-    var itemList = el.querySelectorAll(".suggestion-item-list .suggestion-item");
+    var itemList = el.querySelectorAll(
+      ".suggestion-item-list .suggestion-item"
+    );
     var prevItem = itemList[index];
-    prevItem.classList.remove(className);
+    if (prevItem) prevItem.classList.remove(className);
   };
 
   var addClassAtIndex = function(index, className) {
-    var itemList = el.querySelectorAll(".suggestion-item-list .suggestion-item");
+    var itemList = el.querySelectorAll(
+      ".suggestion-item-list .suggestion-item"
+    );
     var prevItem = itemList[index];
-    prevItem.classList.add(className);
+    if (prevItem) prevItem.classList.add(className);
   };
 
   var setIndex = function(index, state, opts) {
@@ -252,7 +255,7 @@ export function getMentionsPlugin(opts) {
 
     //var newState = view.state.apply(tr);
     //view.updateState(newState);
-    view.dispatch(tr)
+    view.dispatch(tr);
   };
 
   /**
